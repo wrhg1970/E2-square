@@ -1,0 +1,6 @@
+{
+  "name": "E2 Square - Soluciones Educativas",
+  "description": "Consultora estratégica de internacionalización, tecnología e innovación educativa para colegios y universidades de alto nivel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
