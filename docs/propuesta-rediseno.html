@@ -140,6 +140,19 @@ code{font-family:var(--f-mono);font-size:.85em;background:var(--sheet);border:1p
 .svc dd{margin:2px 0 0}
 .svc .pill{justify-self:start}
 
+/* Páginas de programas complementarios */
+.pages{margin-top:28px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px}
+.pages h3{font-size:1.15rem;font-weight:800}
+.pages > div > p{color:var(--ink-2);font-size:.94rem;margin-top:8px}
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.plist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.plist b{font-weight:700}
+.plist code{justify-self:end;align-self:start;white-space:nowrap}
+.plist span{grid-column:1 / -1;color:var(--ink-2);font-size:.9rem}
+.tpl{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:.93rem}
+.tpl li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px}
+.tpl li span{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);padding-top:3px}
+
 /* Sistema */
 .system{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px}
 .swatches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);align-self:start}
@@ -187,7 +200,8 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
   .indent{margin-left:0}
   .finding{grid-template-columns:1fr;gap:8px}
   .compare,.system{grid-template-columns:1fr}
-  .svc-map{grid-template-columns:1fr}
+  .svc-map,.pages{grid-template-columns:1fr}
+  .plist code{justify-self:start}
   .rules,.phases{grid-template-columns:1fr}
   
 }
@@ -447,7 +461,28 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
       <span class="pill p-med">Renombrar</span>
     </article>
   </div>
-  <p class="note"><b>Por decidir con E2 Square:</b> qué pasa con los cinco programas secundarios que hoy aparecen en «Metodología» (movilidad internacional, experiencia profesional, seguros, posgrados docentes y universidad digital). La propuesta es sacarlos de la portada y mencionarlos dentro del servicio al que pertenecen o en una página de «otros programas».</p>
+  <div class="pages">
+    <div>
+      <h3>Programas complementarios: una página cada uno</h3>
+      <p>Decisión de E2 Square: los cinco programas que hoy aparecen al final de «Metodología» salen de la portada y cada uno tiene su propia página. Así la portada se concentra en los cinco servicios y cada programa gana espacio, una URL que se puede compartir y posicionamiento en buscadores.</p>
+      <p>En la portada quedan enlazados desde una fila discreta «Más programas» bajo los servicios, y desde una columna propia en el pie.</p>
+      <h3 style="margin-top:22px">Plantilla común de página</h3>
+      <ol class="tpl">
+        <li><span>1</span>Encabezado corto: nombre, una frase y para quién es (alumnos, egresados, docentes o el colegio).</li>
+        <li><span>2</span>Qué incluye, en lista con reglas.</li>
+        <li><span>3</span>Cómo funciona con el colegio: requisitos, tiempos y respaldo.</li>
+        <li><span>4</span>CTA «Agendar sesión» que abre el agendador con el programa ya seleccionado.</li>
+        <li><span>5</span>Enlace de regreso a los cinco servicios.</li>
+      </ol>
+    </div>
+    <ul class="plist" aria-label="Páginas propuestas">
+      <li><b>Movilidad Internacional</b><code>/programas/movilidad</code><span>Intercambios de semestre o año, campamentos de verano y educación superior en 36 países.</span></li>
+      <li><b>Experiencia Profesional Global</b><code>/programas/experiencia-profesional</code><span>Prácticas internacionales, voluntariados, Camp Counselor y Work &amp; Travel para egresados.</span></li>
+      <li><b>Seguros Internacionales</b><code>/programas/seguros</code><span>Cobertura médica y de asistencia para alumnos en movilidad.</span></li>
+      <li><b>Posgrados Docentes</b><code>/programas/posgrados-docentes</code><span>Maestrías y doctorados en educación para la planta de profesores.</span></li>
+      <li><b>Universidad Digital</b><code>/programas/universidad-digital</code><span>10 licenciaturas, 7 maestrías, 5 especializaciones, bachillerato digital y 2 doctorados en línea.</span></li>
+    </ul>
+  </div>
 </section>
 
 <!-- 4. Sistema -->
@@ -503,7 +538,8 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
         <tr><td>Ejes + método</td><td>Dos secciones: 5 ejes, modelo 360°, 4 pilares y 6 etapas.</td><td>Una sola sección «Cómo trabajamos»: línea de tiempo de 6 etapas con lo que entrega E2 en cada una. Los ejes se integran como resultados.</td><td class="num">6,889 → ~1,800 px</td></tr>
         <tr><td>Testimonios</td><td>Carrusel con fotos de banco.</td><td>Dos o tres citas reales en cursiva, con cargo y colegio, más una fila de logos de instituciones aliadas.</td><td class="num">1,365 → ~900 px</td></tr>
         <tr><td>Contacto</td><td>Tarjeta con degradado, 4 beneficios, 3 botones y bloque de oficina.</td><td>Formulario corto de agenda en la propia página (nombre, colegio, cargo, fecha) y datos de oficina al lado. WhatsApp como segunda opción.</td><td class="num">1,425 → ~1,100 px</td></tr>
-        <tr><td>Pie</td><td>4 columnas, panel de métricas, selector de tema.</td><td>3 columnas: programas, oficina, aviso de privacidad. Sin métricas.</td><td class="num">1,074 → ~700 px</td></tr>
+        <tr><td>Más programas</td><td>Cinco tarjetas al final de «Metodología».</td><td>Una fila de enlaces bajo los servicios. Cada programa vive en su propia página.</td><td class="num">en portada → ~120 px</td></tr>
+        <tr><td>Pie</td><td>4 columnas, panel de métricas, selector de tema.</td><td>4 columnas: servicios, más programas, oficina y aviso de privacidad. Sin métricas.</td><td class="num">1,074 → ~700 px</td></tr>
       </tbody>
     </table>
   </div>
@@ -549,9 +585,10 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
         <li>Reorganizar la oferta en los cinco servicios, con fichas propias para Esports Academy y Orientación Vocacional.</li>
         <li>Fusionar Estrategia y Metodología.</li>
         <li>Formulario de agenda en página; edición de textos para quitar repeticiones.</li>
-        <li>Prerender estático de la portada para SEO.</li>
+        <li>Cinco páginas de programas complementarios con plantilla común y rutas propias (<code>react-router</code>).</li>
+        <li>Prerender estático de la portada y de las páginas de programas para SEO.</li>
       </ul>
-      <p class="eff">≈ 1.5–2 semanas, más sesión de fotos</p>
+      <p class="eff">≈ 2–2.5 semanas, más sesión de fotos</p>
     </div>
   </div>
   <p class="note"><b>Skills usados:</b> la auditoría y el sistema visual siguen los principios de <em>industrial-brutalist-ui</em> en su variante suiza (retícula, reglas visibles, datos en monoespaciada, un solo acento), adaptados a un público institucional. El skill <em>design-taste-frontend</em> no se pudo descargar en esta sesión; sus criterios anti-plantilla se aplicaron a partir de la guía de diseño de artefactos. Las capturas «Hoy» se tomaron en un entorno sin acceso a Unsplash ni Google Fonts, por eso las imágenes aparecen vacías y la tipografía es la de respaldo.</p>
