@@ -120,11 +120,25 @@ code{font-family:var(--f-mono);font-size:.85em;background:var(--sheet);border:1p
 .m-photo span{position:relative;font-family:var(--f-mono);font-size:.95em;letter-spacing:.06em;text-transform:uppercase;color:var(--mock-dim)}
 .m-quote{padding:1.6em 2em;border-top:1px solid var(--mock-rule);font-family:var(--f-serif);font-style:italic;font-size:1.35em;line-height:1.4}
 .m-quote small{display:block;font-family:var(--f-mono);font-style:normal;font-size:.7em;letter-spacing:.08em;text-transform:uppercase;color:var(--mock-dim);margin-top:.6em}
-.m-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--mock-rule)}
-.m-stats div{padding:1.3em 2.6em;border-right:1px solid var(--mock-rule)}
-.m-stats div:last-child{border-right:0}
-.m-stats b{display:block;font-size:2.6em;font-weight:800;letter-spacing:-0.03em;line-height:1;font-variant-numeric:tabular-nums}
-.m-stats span{font-family:var(--f-mono);font-size:.9em;letter-spacing:.06em;text-transform:uppercase;color:var(--mock-dim)}
+.m-svc{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--mock-rule)}
+.m-svc div{padding:1.3em 1.6em 1.4em;border-right:1px solid var(--mock-rule);display:grid;gap:.35em;align-content:start}
+.m-svc div:first-child{padding-left:2.6em}
+.m-svc div:last-child{border-right:0}
+.m-svc span{font-family:var(--f-mono);font-size:.85em;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.m-svc b{font-size:1.45em;font-weight:700;letter-spacing:-0.015em;line-height:1.1}
+.m-svc small{font-size:1em;color:var(--mock-dim);line-height:1.35}
+.m-facts{position:relative;font-family:var(--f-mono);font-size:.95em;letter-spacing:.06em;text-transform:uppercase;color:var(--mock-fg)}
+
+/* Mapa de servicios */
+.svc-map{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.svc{background:var(--sheet);padding:18px 16px 16px;display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:10px;min-width:0}
+.svc .mono{color:var(--ink-2);font-size:11px}
+.svc h3{font-size:1.15rem;font-weight:800;line-height:1.15}
+.svc p{font-size:.9rem;color:var(--ink-2)}
+.svc dl{margin:0;padding-top:10px;border-top:1px solid var(--rule);display:grid;gap:8px;font-size:.86rem}
+.svc dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.svc dd{margin:2px 0 0}
+.svc .pill{justify-self:start}
 
 /* Sistema */
 .system{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px}
@@ -173,6 +187,7 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
   .indent{margin-left:0}
   .finding{grid-template-columns:1fr;gap:8px}
   .compare,.system{grid-template-columns:1fr}
+  .svc-map{grid-template-columns:1fr}
   .rules,.phases{grid-template-columns:1fr}
   
 }
@@ -191,7 +206,7 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
 <div class="hero">
   <p class="mono muted">Auditoría de diseño y plan de mejora</p>
   <h1>Menos folleto, <em>más expediente</em> para rectores</h1>
-  <p class="lede">El sitio tiene buen contenido y una oferta clara, pero lo presenta con la estética genérica de una plantilla SaaS: tarjetas redondeadas iguales, brillos, cinco colores de acento y el mismo dato repetido siete veces. Para un público de rectores y consejos directivos, la propuesta es convertirlo en un documento institucional sobrio, con datos verificables al frente y la mitad de largo.</p>
+  <p class="lede">El sitio tiene buen contenido, pero no refleja con claridad los cinco servicios de E2 Square y lo presenta con la estética genérica de una plantilla SaaS: tarjetas redondeadas iguales, brillos, cinco colores de acento y el mismo dato repetido siete veces. Para un público de rectores y consejos directivos, la propuesta es convertirlo en un documento institucional sobrio, con datos verificables al frente y la mitad de largo.</p>
 </div>
 
 <div class="figures" aria-label="Medidas del sitio actual">
@@ -242,10 +257,19 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
     <div class="finding">
       <div><span class="pill p-high">Alto</span></div>
       <div>
+        <h3>El sitio no presenta los cinco servicios de E2 Square</h3>
+        <p>E2 Square ofrece cinco servicios a los colegios, pero el sitio muestra 7 programas y otros 5 secundarios. Esports Academy aparece mezclada con STEAM, Orientación Vocacional está escondida dentro de «Sistema de 9 Evaluaciones» y Viajes Disruptivos se llama «Viajes Académicos y de Graduación». Idiomas y TOEFL compiten como programas propios.</p>
+      </div>
+      <div class="fix"><strong>Propuesta</strong>Organizar todo el sitio alrededor de los cinco servicios, con el mismo nombre en el menú, el hero, las fichas y el agendador. El resto pasa a ser complemento de un servicio (ver sección 03).</div>
+    </div>
+
+    <div class="finding">
+      <div><span class="pill p-high">Alto</span></div>
+      <div>
         <h3>El hero intenta decirlo todo</h3>
         <p>Barra superior con 5 datos, menú con 9 controles, insignia, titular de dos líneas, párrafo de 45 palabras, 2 botones, 3 tarjetas, una imagen con 2 insignias flotantes y 4 sellos de confianza: 1,658 px antes de llegar a «Soluciones». El titular «Potenciamos la Educación» podría ser de cualquier consultora.</p>
       </div>
-      <div class="fix"><strong>Propuesta</strong>Un titular específico, una frase de apoyo, un CTA principal y cuatro cifras verificables. Todo en una pantalla (ver mockup).</div>
+      <div class="fix"><strong>Propuesta</strong>Un titular, una frase de apoyo, un CTA principal y la franja de los cinco servicios. Todo en una pantalla (ver mockup).</div>
     </div>
 
     <div class="finding">
@@ -297,7 +321,7 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
       <div><span class="pill p-ok">Mantener</span></div>
       <div>
         <h3>Lo que ya funciona</h3>
-        <p>La oferta está bien estructurada en programas, el agendador es claro, el bilingüe ES/EN actualiza <code>&lt;html lang&gt;</code>, el carrusel de testimonios tiene pausa, y no hay desbordamiento horizontal en móvil.</p>
+        <p>Cada programa ya tiene contenido detallado (acreditaciones, destinos, evaluaciones), el agendador es claro, el bilingüe ES/EN actualiza <code>&lt;html lang&gt;</code>, el carrusel de testimonios tiene pausa, y no hay desbordamiento horizontal en móvil.</p>
       </div>
       <div class="fix"><strong>Propuesta</strong>Conservar contenido, flujo de agenda y bilingüe. El cambio es de presentación y edición.</div>
     </div>
@@ -326,45 +350,110 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
     </figure>
     <figure>
       <figcaption><b>Propuesta</b><span class="mono muted">1440 × 900 · mockup</span></figcaption>
-      <div class="mock" role="img" aria-label="Mockup del hero propuesto: titular a la izquierda, fotografía con cita de un rector a la derecha y una franja de cuatro cifras abajo."><div class="m-in">
+      <div class="mock" role="img" aria-label="Mockup del hero propuesto: titular a la izquierda, fotografía con cita y cifras a la derecha, y una franja con los cinco servicios abajo."><div class="m-in">
         <div class="m-nav">
           <span class="m-logo">E<sup>2</sup> Square</span>
-          <span class="m-links"><span>Programas</span><span>Método</span><span>Resultados</span><span>Contacto</span></span>
+          <span class="m-links"><span>Servicios</span><span>Método</span><span>Resultados</span><span>Contacto</span></span>
           <span class="m-cta">Agendar sesión</span>
         </div>
         <div class="m-body">
           <div class="m-left">
             <span class="m-eyebrow">Para rectores y consejos · Ciclo 2026–2027</span>
-            <div class="m-h">Su colegio, con diploma de EE. UU. <em>sin salir de México.</em></div>
-            <p class="m-sub">Doble diploma acreditado por Cognia, currículo de IA K-12 y viajes académicos, implementados en su campus con modelo de co-inversión.</p>
+            <div class="m-h">Cinco servicios para un colegio <em>de talla internacional.</em></div>
+            <p class="m-sub">Diploma dual, Esports Academy, Arukay IA, Orientación Vocacional y Viajes Disruptivos. Se contratan por separado o como un plan integral, implementado en su campus con modelo de co-inversión.</p>
             <div class="m-actions"><span class="m-cta">Agendar sesión de 30 min</span><span class="m-ghost">Ver catálogo 2026</span></div>
           </div>
           <div class="m-right">
-            <div class="m-photo"><span>Foto propia · graduación Doble Diploma 2025</span></div>
+            <div class="m-photo"><span class="m-facts">37 años · 36 países · Top 3 EdTech 2025</span></div>
             <div class="m-quote">«Subimos la retención de secundaria a prepa un 28 %.»<small>Directora académica · colegio aliado (testimonio real)</small></div>
           </div>
         </div>
-        <div class="m-stats">
-          <div><b>37</b><span>años · Grupo EE</span></div>
-          <div><b>36</b><span>países con convenio</span></div>
-          <div><b>35k</b><span>alumnos viajeros</span></div>
-          <div><b>Top 3</b><span>EdTech mundial 2025</span></div>
+        <div class="m-svc">
+          <div><span>Internacional</span><b>Diploma dual</b><small>Diploma de EE. UU. acreditado por Cognia</small></div>
+          <div><span>Competencia</span><b>Esports Academy</b><small>Equipos, liga y habilidades digitales</small></div>
+          <div><span>Tecnología</span><b>Arukay · IA</b><small>Currículo de IA K-12 y certificación docente</small></div>
+          <div><span>Futuro</span><b>Orientación Vocacional</b><small>9 evaluaciones y reporte por alumno</small></div>
+          <div><span>Experiencia</span><b>Viajes Disruptivos</b><small>NASA, Silicon Valley, ONU y Europa</small></div>
         </div>
       </div></div>
       <ul class="notes">
-        <li><span>A</span>El titular nombra el beneficio concreto del programa insignia.</li>
+        <li><span>A</span>El titular presenta la oferta completa: cinco servicios, no un programa.</li>
         <li><span>B</span>Composición asimétrica 7/5: texto a la izquierda, prueba a la derecha.</li>
-        <li><span>C</span>Las cifras aparecen una sola vez, con su fuente, en una franja.</li>
+        <li><span>C</span>Los cinco servicios quedan visibles en la primera pantalla, cada uno con su entrada.</li>
       </ul>
     </figure>
   </div>
   <p class="note"><b>Sobre el titular:</b> es un ejemplo para mostrar el tono. El texto final y la cita deben validarse con el equipo de E2 Square; la cifra de 28 % sólo se publica si proviene de un caso real documentado.</p>
 </section>
 
-<!-- 3. Sistema -->
+<!-- 3. Servicios -->
+<section id="servicios">
+  <div class="sec-head">
+    <span class="mono">03 · Oferta</span>
+    <div>
+      <h2>Los cinco servicios, con el mismo peso</h2>
+      <p>Cada servicio tiene su ficha con la misma estructura: para quién es, qué recibe el colegio y qué lo respalda. Abajo, cómo aparece hoy cada uno en el sitio y qué contenido existente se reubica.</p>
+    </div>
+  </div>
+  <div class="svc-map">
+    <article class="svc">
+      <span class="mono">Internacionalización</span>
+      <h3>Diploma dual</h3>
+      <p>Diploma de high school de EE. UU. acreditado por Cognia, cursado junto al bachillerato mexicano.</p>
+      <dl>
+        <div><dt>Hoy en el sitio</dt><dd>«Doble Diploma Mex-USA», programa 01.</dd></div>
+        <div><dt>Se integra aquí</dt><dd>Centro de idiomas y certificación TOEFL, como complementos.</dd></div>
+      </dl>
+      <span class="pill p-ok">Existe · renombrar</span>
+    </article>
+    <article class="svc">
+      <span class="mono">Competencia digital</span>
+      <h3>Esports Academy</h3>
+      <p>Academia de esports con formación en habilidades digitales, trabajo en equipo y STEAM.</p>
+      <dl>
+        <div><dt>Hoy en el sitio</dt><dd>«E-Sports Academy &amp; STEAM», dentro de la categoría de IA.</dd></div>
+        <div><dt>Cambio</dt><dd>Ficha y categoría propias, separada de Arukay.</dd></div>
+      </dl>
+      <span class="pill p-high">Separar</span>
+    </article>
+    <article class="svc">
+      <span class="mono">Tecnología</span>
+      <h3>Arukay · IA</h3>
+      <p>Currículo de inteligencia artificial K-12 con certificación docente. Top 3 EdTech mundial 2025.</p>
+      <dl>
+        <div><dt>Hoy en el sitio</dt><dd>«Arukay AI Campus», programa 02.</dd></div>
+        <div><dt>Cambio</dt><dd>Nombre corto y consistente: «Arukay · IA».</dd></div>
+      </dl>
+      <span class="pill p-ok">Existe · ajustar</span>
+    </article>
+    <article class="svc">
+      <span class="mono">Futuro del alumno</span>
+      <h3>Orientación Vocacional</h3>
+      <p>Evaluación vocacional y socioemocional por alumno, con reportes para dirección y familias.</p>
+      <dl>
+        <div><dt>Hoy en el sitio</dt><dd>Escondida en «Sistema Integral de 9 Evaluaciones».</dd></div>
+        <div><dt>Cambio</dt><dd>Servicio con nombre propio; las 9 evaluaciones pasan a ser su contenido.</dd></div>
+      </dl>
+      <span class="pill p-crit">Falta como servicio</span>
+    </article>
+    <article class="svc">
+      <span class="mono">Experiencia</span>
+      <h3>Viajes Disruptivos</h3>
+      <p>Viajes formativos a NASA, Silicon Valley, ONU y Europa, con 37 años de logística del Grupo EE.</p>
+      <dl>
+        <div><dt>Hoy en el sitio</dt><dd>«Viajes Académicos y de Graduación de Alto Nivel».</dd></div>
+        <div><dt>Cambio</dt><dd>Usar el nombre de marca «Viajes Disruptivos».</dd></div>
+      </dl>
+      <span class="pill p-med">Renombrar</span>
+    </article>
+  </div>
+  <p class="note"><b>Por decidir con E2 Square:</b> qué pasa con los cinco programas secundarios que hoy aparecen en «Metodología» (movilidad internacional, experiencia profesional, seguros, posgrados docentes y universidad digital). La propuesta es sacarlos de la portada y mencionarlos dentro del servicio al que pertenecen o en una página de «otros programas».</p>
+</section>
+
+<!-- 4. Sistema -->
 <section id="sistema">
   <div class="sec-head">
-    <span class="mono">03 · Sistema visual</span>
+    <span class="mono">04 · Sistema visual</span>
     <div>
       <h2>Tokens que sustituyen los ternarios</h2>
       <p>Seis colores, tres tipografías, una regla de geometría. Se definen una vez en <code>src/index.css</code> con <code>@theme</code> y se cambian por tema con una clase en <code>&lt;html&gt;</code>.</p>
@@ -398,7 +487,7 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
 <!-- 4. Sección por sección -->
 <section id="secciones">
   <div class="sec-head">
-    <span class="mono">04 · Arquitectura</span>
+    <span class="mono">05 · Arquitectura</span>
     <div>
       <h2>De 8 bloques a 6, sección por sección</h2>
       <p>Alturas medidas hoy en móvil a 390 px y objetivo aproximado tras el rediseño.</p>
@@ -408,9 +497,9 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
     <table>
       <thead><tr><th>Sección</th><th>Hoy</th><th>Propuesta</th><th>Móvil hoy → meta</th></tr></thead>
       <tbody>
-        <tr><td>Barra superior + menú</td><td>Dirección, grupo, teléfono, correo, catálogo, idioma, tema, métricas, CTA.</td><td>Logo, 4 enlaces, idioma y un CTA. Teléfono y correo pasan al pie. Tema según el sistema, con conmutador en el pie.</td><td class="num">2 filas → 1</td></tr>
+        <tr><td>Barra superior + menú</td><td>Dirección, grupo, teléfono, correo, catálogo, idioma, tema, métricas, CTA.</td><td>Logo, 4 enlaces (Servicios, Método, Resultados, Contacto), idioma y un CTA. Teléfono y correo pasan al pie. Tema según el sistema, con conmutador en el pie.</td><td class="num">2 filas → 1</td></tr>
         <tr><td>Hero</td><td>Titular genérico centrado, 3 tarjetas, imagen y 4 sellos.</td><td>Titular específico, CTA único, foto propia con cita y franja de 4 cifras.</td><td class="num">2,007 → ~900 px</td></tr>
-        <tr><td>Programas</td><td>Buscador, 2 filas de filtros y 7 tarjetas largas con 4 datos cada una.</td><td>Índice de 7 programas en lista con regla: nombre, para quién, acreditación. Cada fila abre su ficha. Filtro único por nivel.</td><td class="num">4,918 → ~1,600 px</td></tr>
+        <tr><td>Servicios</td><td>Buscador, 2 filas de filtros y 7 tarjetas largas con 4 datos cada una.</td><td>Los cinco servicios en una retícula de 5 columnas (una por servicio), con la misma estructura. Cada uno abre su ficha. Sin buscador: con cinco opciones no hace falta.</td><td class="num">4,918 → ~1,600 px</td></tr>
         <tr><td>Ejes + método</td><td>Dos secciones: 5 ejes, modelo 360°, 4 pilares y 6 etapas.</td><td>Una sola sección «Cómo trabajamos»: línea de tiempo de 6 etapas con lo que entrega E2 en cada una. Los ejes se integran como resultados.</td><td class="num">6,889 → ~1,800 px</td></tr>
         <tr><td>Testimonios</td><td>Carrusel con fotos de banco.</td><td>Dos o tres citas reales en cursiva, con cargo y colegio, más una fila de logos de instituciones aliadas.</td><td class="num">1,365 → ~900 px</td></tr>
         <tr><td>Contacto</td><td>Tarjeta con degradado, 4 beneficios, 3 botones y bloque de oficina.</td><td>Formulario corto de agenda en la propia página (nombre, colegio, cargo, fecha) y datos de oficina al lado. WhatsApp como segunda opción.</td><td class="num">1,425 → ~1,100 px</td></tr>
@@ -423,7 +512,7 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
 <!-- 5. Hoja de ruta -->
 <section id="ruta">
   <div class="sec-head">
-    <span class="mono">05 · Hoja de ruta</span>
+    <span class="mono">06 · Hoja de ruta</span>
     <div>
       <h2>Tres fases, en orden de riesgo</h2>
       <p>La fase 1 se puede publicar sola y no depende del rediseño.</p>
@@ -457,7 +546,8 @@ footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:14px;display
       <h3>Nueva portada y contenido</h3>
       <ul>
         <li>Hero nuevo con titular validado y fotografía propia.</li>
-        <li>Fusionar Estrategia y Metodología; índice de programas con fichas.</li>
+        <li>Reorganizar la oferta en los cinco servicios, con fichas propias para Esports Academy y Orientación Vocacional.</li>
+        <li>Fusionar Estrategia y Metodología.</li>
         <li>Formulario de agenda en página; edición de textos para quitar repeticiones.</li>
         <li>Prerender estático de la portada para SEO.</li>
       </ul>
